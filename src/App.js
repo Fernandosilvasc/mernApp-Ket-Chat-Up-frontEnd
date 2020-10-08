@@ -56,6 +56,7 @@ function App() {
           <Route exact path='/' component={Home}></Route>
           <Route path='/login' component={Login}></Route>
           <Route path='/register' component={Register}></Route>
+          <Home />
         </Switch>
       </UserContext.Provider>
     </BrowserRouter>
