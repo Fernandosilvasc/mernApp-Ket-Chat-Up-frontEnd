@@ -2,12 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Axios from 'axios';
 
-import Header from './components/layout/Header';
+import Header from "./components/layout/Header";
 import Nav from './components/layout/Nav';
-import Home from './components/pages/Home';
-import Login from './components/auth/Login';
-import Register from './components/auth/Register';
-import UserContext from './context/UserContext';
+import Home from "./components/pages/Home";
+import Login from "./components/auth/Login";
+import Register from "./components/auth/Register";
+import UserContext from "./context/UserContext";
+import Dashboard from "./components/pages/dashboard/Dashboard"
+
+import TEST from "./components/layout/test"
+
 
 import './style.css';
 
@@ -70,6 +74,37 @@ function App() {
         /UserContext.Provider> <
         /BrowserRouter>
     );
+
+      if (tokenRes.data) {
+        const userRes = await Axios.get("http://localhost:8000/users/", {
+          headers: { "x-auth-token": token },
+        });
+
+        setUserData({
+          token: token,
+          user: userRes.data,
+        });
+      }
+    };
+    checkLogdedIn();
+  }, []);
+
+  return (
+    <BrowserRouter>
+      <UserContext.Provider value={{ userData, setUserData }}>
+        <Header />
+        <TEST></TEST>
+        <Switch>
+          <Route exact path='/' component={Home}></Route>
+          <Route path='/login' component={Login}></Route>
+          <Route path='/register' component={Register}></Route>
+          <Route path='/dashboard' component={Dashboard}></Route>
+          <Home />
+        </Switch>
+      </UserContext.Provider>
+    </BrowserRouter>
+  );
+
 }
 
 export default App;
