@@ -1,5 +1,7 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+
+import Login from "../auth/Login";
 
 import image from "../images/Group.svg";
 import illust from "../images/illust.png";
@@ -49,8 +51,6 @@ const font = {
 
 const Home = () => {
 
-    
-
     return (
         <div className="home-all" style={flex, homeAll}>
             <div className="home-left">
@@ -67,9 +67,21 @@ const Home = () => {
                 <p>Let us join them in search of this new challenge.</p>
                 </div>
                 <div className="home-btn">
-                <Button>
+                <Link
+                to='/login'
+                >
+                <Button 
+                >
                     JOIN US
                 </Button>
+                </Link>
+
+                <BrowserRouter>
+                <Switch>
+                    <Route path='/login' component={Login}></Route>
+                </Switch>
+                </BrowserRouter>
+                
                 </div>
             </div>
         </div>
