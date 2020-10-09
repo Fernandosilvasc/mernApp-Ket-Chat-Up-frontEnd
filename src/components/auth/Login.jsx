@@ -7,7 +7,7 @@ import ErrorNotice from "../util/errorNotice";
 import avatar from "../images/Group.png";
 import splash from "../images/Vector.png"
 import splash2 from "../images/Vector-2.png"
- import bsplash from "../images/Vector-3.png";
+
 
 export default function Register() {
   const [email, setEmail] = useState("");
@@ -41,12 +41,7 @@ export default function Register() {
   return (
     <>
     <div className="login-container">
- <div id="nav">
-            <div className="rectangle">
-                <img src={bsplash} alt=""/>
-            </div>
-            <div className="text">Ket-chat-up!</div>
-        </div> 
+
     <div className="login">
       <div className="splash">
 <img src={splash} alt=""/>

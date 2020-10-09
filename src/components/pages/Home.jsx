@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import image from "../images/Group.svg";
+
 import illust from "../images/illust.png";
 
 import styled from "styled-components";
@@ -53,10 +53,7 @@ const Home = () => {
 
     return (
         <div className="home-all" style={flex, homeAll}>
-            <div className="home-left">
-                <h1 className="home-left-name">Ket-chat-up!</h1>
-                <img className="home-left-img" src={image} alt="liquid" />
-            </div>
+           
 
             <div className="home-right" style={column, font}>
                 <div className="home-right-img">

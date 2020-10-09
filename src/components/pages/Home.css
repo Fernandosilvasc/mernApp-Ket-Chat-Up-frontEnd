@@ -10,6 +10,8 @@
     /* align-items: center;
     justify-content: center; */
     align-items: center;
+    left: 400px;
+    position: relative;
 }
 
 .home-right-img {
