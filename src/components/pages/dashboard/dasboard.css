@@ -1,0 +1,130 @@
+/* .chat-dashboard{
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+    
+    background: #004cff;
+}
+
+.top-menu{
+    position: absolute;
+    width: 251px;
+    height: 953px;
+    left: 0px;
+    top: 87px;
+    background-color: rgb(74, 171, 255);
+}
+
+.avatar{
+    position: absolute;
+    width: 96px;
+    height: 96px;
+    left: 97px;
+    top: 87px;
+
+}
+
+
+
+
+.home-btn{
+    position: absolute;
+    width: 131px;
+    height: 40px;
+    left: 0px;
+    top: 290px;
+}
+
+.home-icon{
+    position: absolute;
+    left: 1.98%;
+    right: 96.77%;
+    top: 27.59%;
+    bottom: 70.19%;
+}
+
+.home-txt{
+    position: absolute;
+    width: 52px;
+    height: 19px;
+    left: 79px;
+    top: 300px;
+
+    font-family: TT Norms;
+    font-size: 16px;
+    line-height: 19px;
+
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+
+    color: #707C97;
+} */
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "menu chat-window";
+  }
+  .menu {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 0.5fr 0.5fr 0.5fr 0.5fr 2fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "user-info"
+      "home-btn"
+      "chat-btn"
+      "contact-btn"
+      "."
+      "logout-btn";
+    grid-area: menu;
+  }
+  .user-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2.5fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "avatar"
+      "name";
+    grid-area: user-info;
+  }
+  .avatar { grid-area: avatar; }
+  .name { grid-area: name; }
+  .home-btn { grid-area: home-btn; }
+  .chat-btn { grid-area: chat-btn; }
+  .logout-btn { grid-area: logout-btn; }
+  .contact-btn { grid-area: contact-btn; }
+  .chat-window { grid-area: chat-window; }
+
+
+  .avatar{
+      text-align: center;
+      border-radius: 100%;
+      margin-top: 20px;
+  }
+
+  .name{
+      text-align: center;
+      font-weight: bolder;
+  }
+
+  .home-btn, .chat-btn, .contact-btn{
+      text-align: left;
+      padding: 10px;
+  }
+
+  .logout-btn{
+      margin-top: 250px;
+  }
+
+  .chat-window{
+      background-color: rgba(255, 0, 0, 0.411);
+  }

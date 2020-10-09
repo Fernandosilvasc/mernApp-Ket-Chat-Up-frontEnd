@@ -6,8 +6,8 @@ import Header from "./components/layout/Header";
 import Home from "./components/pages/Home";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
-import Dashboard from "./components/pages/Dashboard";
 import UserContext from "./context/UserContext";
+import Dashboard from "./components/pages/dashboard/Dashboard"
 
 import TEST from "./components/layout/test"
 
@@ -59,6 +59,7 @@ function App() {
           <Route path='/login' component={Login}></Route>
           <Route path='/register' component={Register}></Route>
           <Route path='/dashboard' component={Dashboard}></Route>
+          <Home />
         </Switch>
       </UserContext.Provider>
     </BrowserRouter>
