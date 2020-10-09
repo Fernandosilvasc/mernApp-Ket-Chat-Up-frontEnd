@@ -6,6 +6,7 @@ import Header from "./components/layout/Header";
 import Home from "./components/pages/Home";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
+import Dashboard from "./components/pages/Dashboard";
 import UserContext from "./context/UserContext";
 
 import "./style.css";
@@ -33,9 +34,7 @@ function App() {
       );
 
       if (tokenRes.data) {
-
-        const userRes = await Axios.get(
-          "http://localhost:8000/users/", {
+        const userRes = await Axios.get("http://localhost:8000/users/", {
           headers: { "x-auth-token": token },
         });
 
@@ -56,7 +55,7 @@ function App() {
           <Route exact path='/' component={Home}></Route>
           <Route path='/login' component={Login}></Route>
           <Route path='/register' component={Register}></Route>
-          <Home />
+          <Route path='/dashboard' component={Dashboard}></Route>
         </Switch>
       </UserContext.Provider>
     </BrowserRouter>
