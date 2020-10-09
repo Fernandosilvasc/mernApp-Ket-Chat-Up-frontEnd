@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+// import ReactDOM from "react-dom";
 
 import image from "../images/Group.svg";
 import illust from "../images/illust.png";

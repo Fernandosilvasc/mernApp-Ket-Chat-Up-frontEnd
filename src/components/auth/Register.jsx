@@ -1,7 +1,10 @@
 import React, { useState, useContext } from 'react';
+import Axios from "axios";
+
 import UserContext from "../../context/UserContext";
 import { useHistory } from "react-router-dom";
-import Axios from "axios";
+import ErrorNotice from "../util/errorNotice";
+
 
 function Register() {
 
@@ -9,6 +12,7 @@ function Register() {
     const [userName, setUserName] = useState();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
+    const [error, setError] = useState();
 
     const { setUserData } = useContext(UserContext);
     const history = useHistory();
@@ -16,8 +20,15 @@ function Register() {
     const submit = async (e) => {
         e.preventDefault();
 
+        try {
+
+        }
+        catch (err) {
+            err.response.data.msg && setError(err.response.data.msg);
+        }
+
         const newUser = { name, userName, email, password };
-        const loginUser = { email, password}
+        const loginUser = { email, password }
         await Axios.post("http://localhost:8000/users/register", newUser);
         const loginRes = await Axios.post("http://localhost:8000/users/login", loginUser);
 
@@ -35,6 +46,11 @@ function Register() {
     return (
         <div className="page">
             <h2>Register</h2>
+
+            {error && (
+                <ErrorNotice message={error} clearError={() => setError(undefined)} />
+            )}
+
             <form onSubmit={submit}>
                 <input
                     id="register-name"

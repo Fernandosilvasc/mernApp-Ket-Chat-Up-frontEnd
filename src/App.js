@@ -9,6 +9,8 @@ import Register from "./components/auth/Register";
 import Dashboard from "./components/pages/Dashboard";
 import UserContext from "./context/UserContext";
 
+import TEST from "./components/layout/test"
+
 import "./style.css";
 
 function App() {
@@ -51,6 +53,7 @@ function App() {
     <BrowserRouter>
       <UserContext.Provider value={{ userData, setUserData }}>
         <Header />
+        <TEST></TEST>
         <Switch>
           <Route exact path='/' component={Home}></Route>
           <Route path='/login' component={Login}></Route>
