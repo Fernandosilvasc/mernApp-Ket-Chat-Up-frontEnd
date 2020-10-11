@@ -1,0 +1,58 @@
+/* General */
+
+.container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+
+  aside {
+    display: flex;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+    text-align: center;
+    background: linear-gradient(
+      90deg,
+      #431269 0%,
+      rgba(88, 31, 163, 0.835831) 30.48%,
+      rgba(83, 33, 175, 0.65) 64.98%,
+      rgba(120, 71, 211, 0.65) 91.47%
+    );
+
+    .logo {
+      margin: 0 auto;
+      padding: 0;
+    }
+  }
+
+  section {
+    width: 70%;
+    height: 100%;
+  }
+}
+
+.error-notice {
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 2px solid #6441a5;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #a788e3;
+  font-family: "Freckle Face";
+  span {
+    font-size: 1.5em;
+  }
+}
+
+.error-notice button {
+  font-size: 1.5em;
+  font-family: "Freckle Face";
+  width: 40px;
+  height: 40px;
+  border: 2px solid #6441a5;
+  border-radius: 50%;
+  background-color: #ffff;
+  color: #6441a5;
+}

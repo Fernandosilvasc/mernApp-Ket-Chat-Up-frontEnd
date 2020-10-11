@@ -2,15 +2,17 @@ import React, { useState, useContext } from "react";
 import Axios from "axios";
 
 import { useHistory } from "react-router-dom";
-import UserContext from "../../context/UserContext";
-import ErrorNotice from "../util/errorNotice";
-import avatar from "../images/Group.png";
-import splash from "../images/Vector.png"
-import splash2 from "../images/Vector-2.png"
-import bsplash from "../images/Vector-3.png";
+import UserContext from "../../../../context/UserContext";
+import ErrorNotice from "../../../util/errorNotice";
+import avatar from "../../../assets/Group.png";
+import splash from "../../../assets/Vector.png"
+import splash2 from "../../../assets/Vector-2.png"
+import bsplash from "../../../assets/Vector-3.png";
+
+import "../../../../style111.css"
 
 
-export default function Register() {
+export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState();
@@ -38,8 +40,6 @@ export default function Register() {
             err.response.data.msg && setError(err.response.data.msg);
         }
     };
-
-
 
     return (
         <>
@@ -72,8 +72,6 @@ export default function Register() {
 
                         <label htmlFor="login-email">Forgot e-mail?</label>
                         <br />
-
-
 
                         <input
                             id="login-password"

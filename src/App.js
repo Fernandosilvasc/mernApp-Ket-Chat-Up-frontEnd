@@ -2,17 +2,16 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Axios from "axios";
 
-import Header from "./components/layout/Header";
-import Nav from "./components/layout/Nav";
-import Home from "./components/pages/Home";
-import Login from "./components/auth/Login";
-import Register from "./components/auth/Register";
+// import Header from "./components/layout/Header";
+// import Nav from "./components/layout/Nav";
 import UserContext from "./context/UserContext";
+// import Template from "./components/layout/template/Template";
 import Dashboard from "./components/pages/dashboard/Dashboard";
 
-import TEST from "./components/layout/test";
+
 
 import "./style.css";
+import Template from "./components/layout/template/Template";
 
 function App() {
   const [userData, setUserData] = useState({
@@ -53,14 +52,13 @@ function App() {
   return (
     <BrowserRouter>
       <UserContext.Provider value={{ userData, setUserData }}>
-        <Header />
-        <Nav />
-        <Switch>
-          <Route exact path='/' component={Home} />
-          <Route path='/login' component={Login} />
-          <Route path='/register' component={Register} />
-          <Home />
-        </Switch>
+        <Template></Template>
+        <Route  path='/dashboard' component={Dashboard}></Route>
+        {/* <Header /> */}
+        {/* <Switch>
+          <Route exact path='/' component={Template}></Route>
+          <Route  path='/dashboard' component={Dashboard}></Route>
+        </Switch> */}
       </UserContext.Provider>
     </BrowserRouter>
   );

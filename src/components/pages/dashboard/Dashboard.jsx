@@ -1,7 +1,7 @@
 import React from 'react';
 // import ReactDOM from 'react-dom';
 import '../dashboard/dasboard.css';
-import avatarimg from "../../images/avatar.png";
+import avatarimg from "../../assets/avatar.png";
 import homeicon from "./svg/homeicon.svg";
 import chaticon from "./svg/chaticon.svg";
 import contacticon from "./svg/contacticon.svg";
