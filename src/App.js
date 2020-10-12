@@ -7,6 +7,8 @@ import Axios from "axios";
 import UserContext from "./context/UserContext";
 // import Template from "./components/layout/template/Template";
 import Dashboard from "./components/pages/dashboard/Dashboard";
+import Join from "./components/testsocket/Join"
+import Chat from "./components/testsocket/Chat"
 
 
 
@@ -53,7 +55,9 @@ function App() {
     <BrowserRouter>
       <UserContext.Provider value={{ userData, setUserData }}>
         <Template></Template>
-        <Route  path='/dashboard' component={Dashboard}></Route>
+        <Route path='/dashboard' component={Dashboard}></Route>
+        <Route path='/join' component={Join}></Route>
+        <Route path='/chat' component={Chat}></Route>
         {/* <Header /> */}
         {/* <Switch>
           <Route exact path='/' component={Template}></Route>
