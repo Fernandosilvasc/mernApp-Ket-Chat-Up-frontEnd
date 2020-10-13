@@ -1,5 +1,9 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
+import { useState, useContext, useEffect } from "react";
+import UserContext from "../../../../context/UserContext";
+
+
+
 import '../sidebarDashboard/sidebarDashboard.scss';
 import avatarimg from "../../../assets/avatar.png";
 import homeicon from "../svg/homeicon.svg";
@@ -9,6 +13,17 @@ import logouticon from "../svg/logouticon.svg";
 
 
 const Dashboard = () => {
+
+    const { userData } = useContext(UserContext);
+    const [username, setUsername] = useState("");
+
+    useEffect(() => {
+        if (userData.user) {
+            setUsername(userData.user.userName);
+        }
+    }, [userData]);
+
+
     return (
 
         <div className="grid-container">
@@ -16,7 +31,7 @@ const Dashboard = () => {
                 <div className="user-info">
                     <div className="avatar">
                         <img className="avatar" src={avatarimg} alt="avatar" /></div>
-                    <div className="name">USER-NAME-FIELD</div>
+                    <div className="name">{username}</div>
                 </div>
 
 

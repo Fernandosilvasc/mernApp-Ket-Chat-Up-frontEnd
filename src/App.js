@@ -54,11 +54,8 @@ function App() {
   return (
     <BrowserRouter>
       <UserContext.Provider value={{ userData, setUserData }}>
-        {/* <TemplateHome /> */}
+        <TemplateHome />
         <TemplateDashboard />
-        {/* <Route path='/dashboard' component={Dashboard}></Route>
-        <Route path='/join' component={Join}></Route>
-        <Route path='/chat' component={Chat}></Route> */}
       </UserContext.Provider>
     </BrowserRouter>
   );
