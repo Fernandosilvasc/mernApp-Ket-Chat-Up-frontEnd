@@ -5,10 +5,12 @@ import Axios from "axios";
 // import Header from "./components/layout/Header";
 // import Nav from "./components/layout/Nav";
 import UserContext from "./context/UserContext";
-import Template from "./components/layout/template/Template";
-import Dashboard from "./components/pages/dashboard/Dashboard";
-import Join from "./components/testsocket/Join"
-import Chat from "./components/testsocket/Chat"
+import TemplateHome from "./components/layout/template/Template";
+import TemplateDashboard from './components/pages/dashboard/TemplateDashboard'
+
+// import Dashboard from "./components/pages/dashboard/sidebarDashboard";
+// import Join from "./components/testsocket/Join"
+// import Chat from "./components/pages/dashboard/Chat"
 
 import "./style.css";
 
@@ -52,10 +54,11 @@ function App() {
   return (
     <BrowserRouter>
       <UserContext.Provider value={{ userData, setUserData }}>
-        <Template></Template>
-        <Route path='/dashboard' component={Dashboard}></Route>
+        {/* <TemplateHome /> */}
+        <TemplateDashboard />
+        {/* <Route path='/dashboard' component={Dashboard}></Route>
         <Route path='/join' component={Join}></Route>
-        <Route path='/chat' component={Chat}></Route>
+        <Route path='/chat' component={Chat}></Route> */}
       </UserContext.Provider>
     </BrowserRouter>
   );
