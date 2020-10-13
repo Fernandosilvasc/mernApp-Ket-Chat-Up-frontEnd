@@ -1,11 +1,30 @@
 .cardJoinChat {
     width: 500px;
-    background-color: orangered;
+    // background-color: orangered;
+    margin: 20%;
+    
+    h1 {
+        font-size: 1.2em;
+        font-family: "Freckle Face";
+    }
 
     input {
-        width: 100px;
-        background-color: violet;
-        font-size: 24px;
+        display: flex;
+    }
+    button {
+        width: 150px;
+        box-shadow:inset 0px 39px 0px -24px #e67a73;
+	    background-color:#e4685d;
+	    border-radius:4px;
+	    border:1px solid #ffffff;
+	    display:inline-block;
+	    cursor:pointer;
+	    color:#ffffff;
+	    font-family:Arial;
+	    font-size:15px;
+	    padding:6px 15px;
+	    text-decoration:none;
+	    text-shadow:0px 1px 0px #b23e35;
     }
 
 

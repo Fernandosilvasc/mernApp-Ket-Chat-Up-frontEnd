@@ -15,14 +15,13 @@ const Join = () => {
         if (userData.user) {
             setUsername(userData.user.userName);
         }
-        // console.log(username);
     }, [userData]);
 
     return (
         <div className="cardJoinChat">
-            JOIN TEST
+            <h1>Please type the room to create or join</h1>
             <input
-                placeholder="Room"
+                placeholder="Room's name"
                 type="text"
                 onChange={(event) => setRoom(event.target.value)}
             />

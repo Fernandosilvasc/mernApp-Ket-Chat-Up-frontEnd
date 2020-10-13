@@ -5,6 +5,8 @@ import ScrollToBottom from 'react-scroll-to-bottom'
 
 import Message from './Message'
 
+import '../userChat/Chat.scss'
+
 let socket
 
 const Chat = ({ location }) => {
@@ -53,18 +55,22 @@ const Chat = ({ location }) => {
 
         if (message) {
             socket.emit('sendMessage', message, () => setMessage(''))
+
         }
     }
 
-    console.log(message, messages)
+    //show people connected method
+    const showPeople = (event) => {
+
+        return true
+    }
 
 
     return (
-        <div>
-            <div>
-                <h3>Room: {room}</h3>
-                <a href='/dashboard'>Leave Chat</a>
-                <div>
+        <div className="chatContainer">
+            <div className="messagesContainer">
+                <h3>Room you are connected to: "{room}"</h3>
+                <div className="messages">
                     <ScrollToBottom>
                         {/* {(!messages) &&
                             (
@@ -85,30 +91,37 @@ const Chat = ({ location }) => {
                         />
                         <button onClick={(event) => sendMessage(event)}>Send</button>
                     </form>
+                    <a href='/dashboard'>Leave Chat</a>
                 </div>
             </div>
-            <div>
-                {
-                    users
-                        ? (
-                            <div>
-                                <h1>People currently chatting:</h1>
-                                <div>
-                                    <h2>
-                                        {users.map(({ username }) => (
-                                            <div key={username}>
-                                                {username}
-                                                {/* <img alt="Online Icon" src={onlineIcon} /> */}
-                                            </div>
-                                        ))}
-                                    </h2>
-                                </div>
-                            </div>
-                        )
-                        : null
-                }
-            </div>
-            CHAT
+            {/* <button onClick={event => showPeople(event)}>Show People</button>
+            {
+                showPeople ? (
+                    <div className="peopleChattingContainer">
+                        {
+                            users
+                                ? (
+                                    <div>
+                                        <h1>People currently in the room:</h1>
+                                        <div>
+                                            <h2>
+                                                {users.map(({ username }) => (
+                                                    <div key={username}>
+                                                        {username}
+                                                    </div>
+                                                ))}
+                                            </h2>
+                                        </div>
+                                    </div>
+                                )
+                                : null
+                        }
+                    </div>
+                ) :
+                (
+                    null
+                )
+            } */}
         </div>
     );
 };
