@@ -1,10 +1,12 @@
-import React, {useState} from 'react';
-import {Link} from 'react-router-dom'
+import React, { useState, useContext } from 'react';
+import { Link } from 'react-router-dom';
+import UserContext from "../../context/UserContext";
 
 const Join = () => {
-    const [user, setUser] = useState('')
-    const [username, setUsername] = useState('TestUser')
-    const [room, setRoom] = useState('')
+    // const [user, setUser] = useState('')
+    const { userData } = useContext(UserContext);
+    const [username, setUsername] = useState("")
+    const [room, setRoom] = useState('');
 
     return (
         <div>

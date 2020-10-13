@@ -42,7 +42,7 @@ const Chat = ({ location }) => {
         socket.on('message', (message) => {
             setMessages([...messages, message])
         })
-        socket.on('roomData', ({users}) => {
+        socket.on('roomData', ({ users }) => {
             setUsers(users)
         })
     }, [messages])

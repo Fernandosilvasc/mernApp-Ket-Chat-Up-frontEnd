@@ -5,15 +5,13 @@ import Axios from "axios";
 // import Header from "./components/layout/Header";
 // import Nav from "./components/layout/Nav";
 import UserContext from "./context/UserContext";
-// import Template from "./components/layout/template/Template";
+import Template from "./components/layout/template/Template";
 import Dashboard from "./components/pages/dashboard/Dashboard";
 import Join from "./components/testsocket/Join"
 import Chat from "./components/testsocket/Chat"
 
-
-
 import "./style.css";
-import Template from "./components/layout/template/Template";
+
 
 function App() {
   const [userData, setUserData] = useState({
@@ -58,11 +56,6 @@ function App() {
         <Route path='/dashboard' component={Dashboard}></Route>
         <Route path='/join' component={Join}></Route>
         <Route path='/chat' component={Chat}></Route>
-        {/* <Header /> */}
-        {/* <Switch>
-          <Route exact path='/' component={Template}></Route>
-          <Route  path='/dashboard' component={Dashboard}></Route>
-        </Switch> */}
       </UserContext.Provider>
     </BrowserRouter>
   );
